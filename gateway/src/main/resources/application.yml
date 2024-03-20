@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: my-service
+          uri: lb://my-service
+          predicates:
+            - Path=/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+management:
+  server:
+    port: 0

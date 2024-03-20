@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: my-service
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on_save # Sessions flush mode.
+      namespace: spring:session # Namespace for keys used to store sessions.
+  redis:
+    host: localhost # Redis server host.
+    password:  # Login password of the redis server.
+    port: 6379 # Redis server port.
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+server:
+  port: 0
+
+management:
+  server:
+    port: 0
+

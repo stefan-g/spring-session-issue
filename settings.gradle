@@ -1,0 +1,6 @@
+rootProject.name = 'spring-session-issue'
+include 'servicediscovery'
+include 'gateway'
+include 'service'
+include 'client'
+
