@@ -23,7 +23,13 @@ dependencies {
 	implementation 'org.redisson:redisson:3.27.2'
 	implementation 'org.redisson:redisson-spring-boot-starter:3.27.2'
 
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 
 
 }
@@ -33,3 +39,10 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:2023.0.0"
 	}
 }
+
+configurations {
+	implementation {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging' // exclude spring starter logging to use log4j & gelf for greylog
+	}
+}
+
